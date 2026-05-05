@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catholic Content OS — Página de Vendas Hotmart</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Arial', sans-serif; color: #1c1c1c; background: #fff; line-height: 1.7; }
+
+  /* ── HERO ── */
+  .hero { background: #0f2440; color: #fff; padding: 3rem 1.5rem 2.5rem; text-align: center; }
+  .hero .eyebrow { font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: #FFD700; font-weight: bold; margin-bottom: 1rem; }
+  .hero h1 { font-size: clamp(1.6rem, 4vw, 2.6rem); line-height: 1.25; font-weight: 900; max-width: 680px; margin: 0 auto 1rem; }
+  .hero h1 span { color: #FFD700; }
+  .hero .sub { font-size: 1.05rem; color: #b8cce0; max-width: 560px; margin: 0 auto 2rem; }
+  .hero-cta { display: inline-block; background: #27ae60; color: #fff; font-size: 1.05rem; font-weight: bold; padding: 1rem 2.2rem; border-radius: 6px; text-decoration: none; margin-bottom: 0.6rem; }
+  .hero-cta:hover { background: #219a52; }
+  .hero .guarantee-micro { font-size: 0.78rem; color: #7fa8c9; margin-top: 0.4rem; }
+
+  /* ── SEÇÕES ── */
+  section { padding: 3rem 1.5rem; max-width: 720px; margin: 0 auto; }
+  h2 { font-size: clamp(1.3rem, 3vw, 1.8rem); font-weight: 900; color: #0f2440; margin-bottom: 1rem; line-height: 1.3; }
+  h3 { font-size: 1.1rem; font-weight: bold; color: #0f2440; margin-bottom: 0.4rem; }
+  p { margin-bottom: 1rem; font-size: 1rem; color: #333; }
+
+  /* ── DOR ── */
+  .pain { background: #fafafa; border-left: 5px solid #e74c3c; padding: 1.5rem 1.5rem 1.5rem 1.8rem; border-radius: 0 8px 8px 0; margin-bottom: 1rem; }
+  .pain p { color: #444; margin: 0; }
+
+  /* ── CHECK LIST ── */
+  .check-list { list-style: none; padding: 0; }
+  .check-list li { padding: 0.5rem 0 0.5rem 2rem; position: relative; font-size: 0.97rem; border-bottom: 1px solid #f0f0f0; }
+  .check-list li:last-child { border: none; }
+  .check-list li::before { content: "✓"; position: absolute; left: 0; color: #27ae60; font-weight: bold; font-size: 1.1rem; }
+
+  /* ── X LIST ── */
+  .x-list { list-style: none; padding: 0; }
+  .x-list li { padding: 0.45rem 0 0.45rem 2rem; position: relative; font-size: 0.97rem; color: #555; }
+  .x-list li::before { content: "✗"; position: absolute; left: 0; color: #e74c3c; font-weight: bold; }
+
+  /* ── PRODUTO BOX ── */
+  .product-box { background: #e8f4f0; border: 2px solid #27ae60; border-radius: 12px; padding: 1.8rem; margin: 1.5rem 0; }
+  .product-box h3 { color: #1a5c38; font-size: 1.2rem; margin-bottom: 1rem; }
+  .product-box ul { list-style: none; padding: 0; }
+  .product-box ul li { padding: 0.4rem 0 0.4rem 1.8rem; position: relative; font-size: 0.95rem; }
+  .product-box ul li::before { content: "→"; position: absolute; left: 0; color: #27ae60; font-weight: bold; }
+
+  /* ── BÓNUS ── */
+  .bonus-wrap { border: 2px dashed #27ae60; border-radius: 10px; padding: 1.2rem 1.5rem; margin: 1rem 0; }
+  .bonus-tag { display: inline-block; background: #27ae60; color: #fff; font-size: 0.72rem; font-weight: bold; padding: 3px 12px; border-radius: 20px; letter-spacing: 0.06em; margin-bottom: 0.5rem; }
+  .bonus-wrap h3 { margin-bottom: 0.3rem; }
+  .bonus-wrap p { font-size: 0.93rem; color: #444; margin: 0; }
+
+  /* ── PRICE BOX ── */
+  .price-section { background: #0f2440; color: #fff; padding: 3rem 1.5rem; text-align: center; }
+  .price-section h2 { color: #fff; margin-bottom: 0.5rem; }
+  .price-section .de { font-size: 0.95rem; color: #7fa8c9; text-decoration: line-through; margin-bottom: 0.2rem; }
+  .price-section .por { font-size: 0.85rem; color: #b8cce0; margin-bottom: 0.3rem; }
+  .price-section .valor { font-size: 3.5rem; font-weight: 900; color: #FFD700; line-height: 1; }
+  .price-section .parcel { font-size: 0.9rem; color: #9ec3e0; margin-top: 0.3rem; margin-bottom: 1.5rem; }
+  .btn-comprar { display: inline-block; background: #27ae60; color: #fff; font-size: 1.15rem; font-weight: bold; padding: 1.1rem 2.8rem; border-radius: 6px; text-decoration: none; margin-bottom: 0.8rem; }
+  .btn-comprar:hover { background: #219a52; }
+  .price-section .micro { font-size: 0.78rem; color: #7fa8c9; }
+
+  /* ── GARANTIA ── */
+  .garantia { display: flex; gap: 1.2rem; align-items: flex-start; background: #fffbe6; border: 1px solid #FFD700; border-radius: 10px; padding: 1.2rem 1.5rem; margin: 1.5rem 0; }
+  .garantia .icon { font-size: 2.5rem; flex-shrink: 0; }
+  .garantia p { margin: 0; font-size: 0.93rem; color: #333; }
+
+  /* ── FAQ ── */
+  .faq-item { border-bottom: 1px solid #eee; padding: 1rem 0; }
+  .faq-item strong { display: block; color: #0f2440; font-size: 0.97rem; margin-bottom: 0.3rem; }
+  .faq-item p { font-size: 0.93rem; color: #555; margin: 0; }
+
+  /* ── CTA FINAL ── */
+  .cta-final { background: #f5f5f5; padding: 3rem 1.5rem; text-align: center; }
+  .cta-final h2 { margin-bottom: 0.5rem; }
+  .cta-final p { color: #555; max-width: 520px; margin: 0 auto 1.5rem; }
+
+  /* ── DIVISOR ── */
+  .divider { border: none; border-top: 1px solid #eee; margin: 0; }
+
+  @media (max-width: 600px) {
+    .hero { padding: 2rem 1rem 2rem; }
+    section { padding: 2rem 1rem; }
+    .price-section .valor { font-size: 2.8rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     HERO
+══════════════════════════════════════════ -->
+<div class="hero">
+  <p class="eyebrow">Para administradores de páginas católicas</p>
+  <h1>Chega de ficar <span>sem ideias</span> para a sua página de fé</h1>
+  <p class="sub">70 prompts de IA + calendário de 30 dias + 120 hashtags. Tudo pronto. Você só copia, adapta e publica — em menos de 5 minutos por post.</p>
+  <a class="hero-cta" href="#">QUERO O PACK AGORA →</a>
+  <p class="guarantee-micro">✓ Acesso imediato &nbsp;·&nbsp; ✓ Funciona com ChatGPT grátis &nbsp;·&nbsp; ✓ Garantia de 7 dias</p>
+</div>
+
+<!-- ══════════════════════════════════════════
+     DOR
+══════════════════════════════════════════ -->
+<section>
+  <h2>Você se identifica com isso?</h2>
+
+  <div class="pain"><p>"Quero postar todos os dias, mas no momento de sentar para escrever... trava. Fico horas olhando para a tela sem saber por onde começar."</p></div>
+  <div class="pain"><p>"Já postei a mesma oração três vezes esse mês. Meus seguidores merecem mais, mas o tempo é curto e as ideias não aparecem."</p></div>
+  <div class="pain"><p>"Vejo outras páginas crescendo rápido. A minha fica estagnada. Sei que o problema é a falta de consistência, mas não consigo manter o ritmo."</p></div>
+
+  <p style="margin-top:1.5rem;">Se você respondeu sim para qualquer uma dessas situações, você não está sozinho. Administrar uma página de fé com qualidade, consistência e sem perder horas po...</p>
+  <p><strong>Mas isso tem solução — e ela é mais simples do que você imagina.</strong></p>
+</section>
+
+<hr class="divider">
+
+<!-- ══════════════════════════════════════════
+     SOLUÇÃO
+══════════════════════════════════════════ -->
+<section>
+  <h2>Apresentando o <span style="color:#27ae60;">Catholic Content OS</span></h2>
+  <p>Um sistema completo de criação de conteúdo para páginas católicas, usando inteligência artificial. Você não precisa ser escritor, designer ou especialista em marketing. Só precisa de fé...</p>
+
+  <div class="product-box">
+    <h3>O que está incluído:</h3>
+    <ul>
+      <li><strong>70 prompts prontos</strong> — posts devocionais, guiões de Reels, legendas, orações, planejamento e gestão da comunidade</li>
+      <li><strong>Cada prompt tem campos personalizáveis</strong> — você adapta ao seu santo, tema ou época litúrgica</li>
+      <li><strong>Funciona com qualquer IA gratuita</strong> — ChatGPT, Claude ou Gemini. Sem pagar nada extra</li>
+      <li><strong>Resultado em minutos</strong> — copie, cole, adapte e publique. Menos de 5 minutos por post</li>
+    </ul>
+  </div>
+
+  <h3 style="margin-top:1.5rem; margin-bottom:0.8rem;">Com este pack você vai conseguir:</h3>
+  <ul class="check-list">
+    <li>Ter ideias de conteúdo para os próximos 30 dias em menos de 1 hora</li>
+    <li>Criar posts devocionais, orações e reflexões sem bloquear</li>
+    <li>Gravar Reels com script pronto — sem improvisação na frente da câmera</li>
+    <li>Responder comentários difíceis com tom pastoral e sem conflito</li>
+    <li>Manter consistência mesmo nas semanas mais corridas</li>
+    <li>Crescer a sua página com conteúdo de qualidade e frequência</li>
+  </ul>
+</section>
+
+<hr class="divider">
+
+<!-- ══════════════════════════════════════════
+     BÔNUS
+══════════════════════════════════════════ -->
+<section>
+  <h2>E ainda tem mais — dois bônus exclusivos</h2>
+
+  <div class="bonus-wrap">
+    <span class="bonus-tag">BÔNUS 1 — GRÁTIS</span>
+    <h3>Calendário Editorial de 30 Dias</h3>
+    <p>Um plano dia a dia com tipo de conteúdo, tema e qual prompt usar para cada publicação. Alinhado com a lógica do calendário litúrgico. Você abre, segue o plano e não precisa pensar mais...</p>
+  </div>
+
+  <div class="bonus-wrap">
+    <span class="bonus-tag">BÔNUS 2 — GRÁTIS</span>
+    <h3>120 Hashtags em Português para Conteúdo Religioso</h3>
+    <p>Organizadas em 6 categorias: fé geral, devoção mariana, oração, liturgia, alcance viral e hashtags curtas. Com guia de combinação por tipo de post para maximizar o alcance orgânico.</p>
+  </div>
+
+  <p style="margin-top:1rem; font-size:0.93rem; color:#555;">Esses dois bônus sozinhos resolveriam o problema de quem não sabe o que postar nem como ser encontrado. Aqui eles vêm de graça com o pa...</p>
+</section>
+
+<hr class="divider">
+
+<!-- ══════════════════════════════════════════
+     PARA QUEM É / NÃO É
+══════════════════════════════════════════ -->
+<section>
+  <h2>Este pack é para você se...</h2>
+  <ul class="check-list">
+    <li>Você administra uma página paroquial, diocesana, mariana ou de movimento apostólico</li>
+    <li>Você tem uma página de fé mas posta de forma irregular por falta de ideias ou tempo</li>
+    <li>Você quer evangelizar nas redes sociais mas não sabe escrever "para o digital"</li>
+    <li>Você nunca usou IA antes e quer um ponto de partida simples e já testado</li>
+    <li>Você quer crescer sua comunidade de fé online com consistência</li>
+  </ul>
+
+  <h2 style="margin-top:2rem;">Este pack NÃO é para você se...</h2>
+  <ul class="x-list">
+    <li>Você quer um produto que escreva e publique sozinho sem qualquer envolvimento seu</li>
+    <li>Você busca resultado em 24 horas sem nenhum esforço</li>
+    <li>Você não tem nenhuma página ou intenção de criar conteúdo online</li>
+  </ul>
+</section>
+
+<hr class="divider">
+
+<!-- ══════════════════════════════════════════
+     PREÇO
+══════════════════════════════════════════ -->
+<div class="price-section">
+  <h2>Invista na sua missão digital</h2>
+  <p class="de">De R$ 97,00</p>
+  <p class="por">Por apenas</p>
+  <p class="valor">R$ 47</p>
+  <p class="parcel">ou em até 2x de R$ 24,50 no cartão</p>
+  <a class="btn-comprar" href="#">QUERO O CATHOLIC CONTENT OS →</a><br>
+  <p class="micro">✓ Pagamento seguro via Hotmart &nbsp;·&nbsp; ✓ PIX, cartão ou boleto &nbsp;·&nbsp; ✓ Acesso imediato ao download</p>
+</div>
+
+<!-- ══════════════════════════════════════════
+     GARANTIA
+══════════════════════════════════════════ -->
+<section>
+  <div class="garantia">
+    <div class="icon">🛡️</div>
+    <div>
+      <strong style="display:block; margin-bottom:0.3rem; color:#0f2440;">Garantia incondicional de 7 dias</strong>
+      <p>Se por qualquer motivo você não ficar satisfeito, basta enviar uma mensagem em até 7 dias após a compra e devolvemos 100% do valor, sem perguntas. O risco é todo nosso.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ══════════════════════════════════════════
+     FAQ
+══════════════════════════════════════════ -->
+<section>
+  <h2>Perguntas frequentes</h2>
+
+  <div class="faq-item">
+    <strong>Preciso pagar pelo ChatGPT para usar os prompts?</strong>
+    <p>Não. Todos os 70 prompts funcionam com as versões 100% gratuitas do ChatGPT, Claude e Gemini. Você não precisa assinar nada além do Catholic Content OS.</p>
+  </div>
+  <div class="faq-item">
+    <strong>Funciona para qualquer tipo de página católica?</strong>
+    <p>Sim. Paróquias, grupos de oração, páginas marianas, movimentos como Renovação Carismática, Neocatecumenato, Comunhão e Libertação, Shalom, e qualquer página de fé cristã católica...</p>
+  </div>
+  <div class="faq-item">
+    <strong>Nunca usei IA. É difícil?</strong>
+    <p>Se você sabe copiar e colar texto, sabe usar estes prompts. O pack inclui instruções simples de como começar. Em menos de 10 minutos você já terá seu primeiro conteúdo gerado.</p>
+  </div>
+  <div class="faq-item">
+    <strong>O conteúdo gerado pela IA é fiel à doutrina católica?</strong>
+    <p>Os prompts foram construídos para produzir conteúdo alinhado com a fé católica. Como em qualquer ferramenta, você revisa antes de publicar — mas essa revisão leva segundos, não horas...</p>
+  </div>
+  <div class="faq-item">
+    <strong>Como recebo o material após a compra?</strong>
+    <p>Imediatamente após o pagamento confirmado, você recebe o link para download dos três arquivos PDF diretamente na plataforma Hotmart. Acesso instantâneo, sem esperar.</p>
+  </div>
+  <div class="faq-item">
+    <strong>E se eu não gostar?</strong>
+    <p>Você tem 7 dias de garantia incondicional. Peça o reembolso e devolveremos 100% do valor, sem burocracia e sem questionamentos.</p>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ══════════════════════════════════════════
+     CTA FINAL
+══════════════════════════════════════════ -->
+<div class="cta-final">
+  <h2>A sua missão digital começa agora</h2>
+  <p>Cada dia sem consistência é um dia em que a sua mensagem de fé não chegou a quem precisava ouvir. Dê o próximo passo.</p>
+  <a class="btn-comprar" href="#" style="font-size:1.1rem;">GARANTIR MEU ACESSO POR R$ 47 →</a>
+  <p style="font-size:0.8rem; color:#888; margin-top:0.8rem;">Preço de lançamento. Pode subir a qualquer momento.</p>
+</div>
+
+</body>
+</html>
