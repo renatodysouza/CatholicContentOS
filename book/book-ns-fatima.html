@@ -3,516 +3,175 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nossa Senhora de Fátima — Guia Devocional Completo</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<title>Nossa Senhora de Fátima — Orações, Novena e Rosário Completo</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 :root {
-  --azul:       #1A3A5C;
-  --azul-med:   #2E6DA4;
-  --azul-claro: #EAF2F8;
-  --dourado:    #B8860B;
-  --dourado-c:  #F5EDD6;
-  --creme:      #FDFAF4;
-  --creme2:     #F7F2E8;
-  --texto:      #2C2C2C;
-  --muted:      #6B6B6B;
-  --branco:     #ffffff;
+  --azul:    #1A3A5C;
+  --azul-m:  #2E6DA4;
+  --azul-c:  #EAF2F8;
+  --dourado: #B8860B;
+  --dour-c:  #F5EDD6;
+  --creme:   #FDFAF4;
+  --creme2:  #F7F2E8;
+  --texto:   #2C2C2C;
+  --muted:   #666;
+  --branco:  #fff;
+  --verde:   #1A7F5A;
 }
-
 html { scroll-behavior: smooth; }
+body { font-family: 'Lato', sans-serif; background: var(--creme); color: var(--texto); line-height: 1.7; overflow-x: hidden; font-size: 16px; }
+.container { max-width: 720px; margin: 0 auto; padding: 0 20px; }
 
-body {
-  font-family: 'Lato', sans-serif;
-  background: var(--creme);
-  color: var(--texto);
-  line-height: 1.7;
-  overflow-x: hidden;
-}
+/* TOPBAR */
+.topbar { background: var(--dourado); color: #fff; text-align: center; padding: 11px 20px; font-size: 14px; font-weight: 700; letter-spacing: 0.04em; }
 
-/* ── UTILITÁRIOS ── */
-.container { max-width: 740px; margin: 0 auto; padding: 0 24px; }
-.serif { font-family: 'Cormorant Garamond', Georgia, serif; }
-.dourado { color: var(--dourado); }
-.text-center { text-align: center; }
+/* HERO */
+.hero { background: var(--azul); color: #fff; text-align: center; padding: 72px 20px 64px; position: relative; }
+.hero::after { content:''; position:absolute; bottom:0; left:0; right:0; height:2px; background:linear-gradient(90deg,transparent,var(--dourado),transparent); }
+.hero-ornamento { font-family:'Cormorant Garamond',serif; font-size:20px; color:var(--dourado); letter-spacing:16px; display:block; margin-bottom:28px; opacity:.9; }
+.hero h1 { font-family:'Cormorant Garamond',serif; font-size:clamp(28px,5.5vw,50px); font-weight:600; line-height:1.15; margin-bottom:10px; }
+.hero h1 em { font-style:italic; color:var(--dourado); font-weight:400; }
+.hero-sub { font-family:'Cormorant Garamond',serif; font-size:clamp(15px,2.5vw,19px); font-style:italic; color:rgba(255,255,255,.7); margin-bottom:32px; }
+.hero-citacao { font-family:'Cormorant Garamond',serif; font-size:clamp(17px,2.5vw,21px); font-style:italic; color:var(--dour-c); max-width:500px; margin:0 auto 36px; line-height:1.65; }
+.hero-citacao cite { display:block; font-size:13px; font-style:normal; color:rgba(255,255,255,.45); margin-top:8px; letter-spacing:.05em; text-transform:uppercase; }
+.btn { display:inline-block; font-family:'Lato',sans-serif; font-size:15px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:16px 44px; border-radius:2px; text-decoration:none; cursor:pointer; border:none; transition:all .2s; }
+.btn-gold { background:var(--dourado); color:#fff; }
+.btn-gold:hover { background:#9A6E09; transform:translateY(-1px); }
+.btn-outline { background:transparent; color:#fff; border:1.5px solid rgba(255,255,255,.5); font-size:14px; padding:12px 32px; }
+.btn-outline:hover { border-color:#fff; background:rgba(255,255,255,.08); }
+.hero-nota { font-size:12px; color:rgba(255,255,255,.4); margin-top:12px; }
 
-/* ── BARRA TOPO ── */
-.topbar {
-  background: var(--dourado);
-  color: var(--branco);
-  text-align: center;
-  padding: 10px 24px;
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-}
+/* DIVISOR */
+.divisor { display:flex; align-items:center; gap:14px; margin:32px auto; max-width:360px; }
+.divisor::before, .divisor::after { content:''; flex:1; height:1px; background:linear-gradient(90deg,transparent,var(--dourado),transparent); }
+.divisor span { font-family:'Cormorant Garamond',serif; color:var(--dourado); font-size:20px; }
 
-/* ── HERO ── */
-.hero {
-  background: var(--azul);
-  color: var(--branco);
-  text-align: center;
-  padding: 80px 24px 70px;
-  position: relative;
-  overflow: hidden;
-}
-.hero::before {
-  content: '';
-  position: absolute; inset: 0;
-  background: radial-gradient(ellipse at 50% -20%, #2E6DA4 0%, transparent 65%);
-  pointer-events: none;
-}
-.hero::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, var(--dourado), transparent);
-}
-.hero-ornament {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 22px;
-  color: var(--dourado);
-  letter-spacing: 18px;
-  display: block;
-  margin-bottom: 28px;
-  opacity: 0.9;
-  position: relative;
-}
-.hero h1 {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: clamp(32px, 6vw, 52px);
-  font-weight: 600;
-  line-height: 1.15;
-  margin-bottom: 10px;
-  position: relative;
-}
-.hero h1 em {
-  font-style: italic;
-  color: var(--dourado);
-  font-weight: 300;
-}
-.hero-sub {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(16px, 3vw, 20px);
-  font-style: italic;
-  color: rgba(255,255,255,0.75);
-  margin-bottom: 36px;
-  position: relative;
-}
-.hero-citacao {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 18px;
-  font-style: italic;
-  color: var(--dourado-c);
-  max-width: 480px;
-  margin: 0 auto 40px;
-  line-height: 1.6;
-  position: relative;
-}
-.hero-citacao cite {
-  display: block;
-  font-size: 13px;
-  font-style: normal;
-  color: rgba(255,255,255,0.5);
-  margin-top: 8px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-.btn-primary {
-  display: inline-block;
-  background: var(--dourado);
-  color: var(--branco);
-  font-family: 'Lato', sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding: 18px 48px;
-  border-radius: 2px;
-  text-decoration: none;
-  transition: background 0.2s, transform 0.15s;
-  position: relative;
-  cursor: pointer;
-  border: none;
-}
-.btn-primary:hover { background: #9A6E09; transform: translateY(-1px); }
-.btn-secondary {
-  display: inline-block;
-  background: var(--branco);
-  color: var(--azul);
-  font-family: 'Lato', sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding: 18px 48px;
-  border-radius: 2px;
-  text-decoration: none;
-  transition: all 0.2s;
-  border: 2px solid var(--branco);
-  cursor: pointer;
-}
-.btn-secondary:hover { background: transparent; color: var(--branco); }
-.hero-preco {
-  position: relative;
-  margin-top: 12px;
-  font-size: 13px;
-  color: rgba(255,255,255,0.5);
-}
+/* SEÇÕES */
+.sec-label { font-size:11px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--dourado); text-align:center; margin-bottom:14px; }
+.sec-titulo { font-family:'Cormorant Garamond',serif; font-size:clamp(24px,4vw,36px); font-weight:600; color:var(--azul); text-align:center; line-height:1.2; margin-bottom:28px; }
+.sec-titulo.branco { color:#fff; }
 
-/* ── INTRODUÇÃO ── */
-.intro {
-  background: var(--branco);
-  padding: 72px 24px;
-  border-bottom: 1px solid #E8E0D0;
-}
-.intro-text {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(19px, 3vw, 24px);
-  line-height: 1.75;
-  color: var(--texto);
-  text-align: center;
-  max-width: 620px;
-  margin: 0 auto;
-}
-.intro-text strong { color: var(--azul); font-weight: 600; }
-.divider {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin: 36px auto;
-  max-width: 400px;
-}
-.divider::before, .divider::after {
-  content: ''; flex: 1;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--dourado), transparent);
-}
-.divider span {
-  font-family: 'Cormorant Garamond', serif;
-  color: var(--dourado);
-  font-size: 22px;
-}
+/* INTRO */
+.intro { background:var(--branco); padding:68px 20px; border-bottom:1px solid #E8E0D0; }
+.intro-text { font-family:'Cormorant Garamond',serif; font-size:clamp(18px,2.8vw,23px); line-height:1.8; color:var(--texto); text-align:center; max-width:600px; margin:0 auto; }
+.intro-text strong { color:var(--azul); font-weight:600; }
 
-/* ── PROBLEMA ── */
-.problema {
-  background: var(--creme2);
-  padding: 72px 24px;
-  border-top: 1px solid #E8E0D0;
-  border-bottom: 1px solid #E8E0D0;
-}
-.section-label {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--dourado);
-  text-align: center;
-  margin-bottom: 16px;
-}
-.section-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(26px, 4vw, 38px);
-  font-weight: 600;
-  color: var(--azul);
-  text-align: center;
-  line-height: 1.2;
-  margin-bottom: 32px;
-}
-.check-list {
-  list-style: none;
-  max-width: 560px;
-  margin: 0 auto;
-}
-.check-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  font-size: 17px;
-  color: var(--texto);
-  padding: 10px 0;
-  border-bottom: 1px solid #E8E0D0;
-  line-height: 1.55;
-}
-.check-list li:last-child { border-bottom: none; }
-.check-list .icon {
-  flex-shrink: 0;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px;
-  margin-top: 2px;
-}
-.icon-check { background: #1A7F5A; color: #fff; }
-.icon-x     { background: #C0392B; color: #fff; }
+/* AUDIÊNCIA */
+.audiencia { background:var(--creme2); padding:68px 20px; border-bottom:1px solid #E8E0D0; }
+.check-list { list-style:none; max-width:560px; margin:0 auto; }
+.check-list li { display:flex; align-items:flex-start; gap:12px; font-size:16px; color:var(--texto); padding:10px 0; border-bottom:1px solid #E8E0D0; line-height:1.55; }
+.check-list li:last-child { border-bottom:none; }
+.ico-check { flex-shrink:0; width:22px; height:22px; border-radius:50%; background:var(--verde); color:#fff; display:flex; align-items:center; justify-content:center; font-size:12px; margin-top:2px; font-weight:700; }
 
-/* ── CONTEÚDO ── */
-.conteudo {
-  background: var(--azul);
-  color: var(--branco);
-  padding: 80px 24px;
-}
-.conteudo .section-title { color: var(--branco); }
-.conteudo .section-label { color: var(--dourado); }
-.conteudo-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  max-width: 660px;
-  margin: 40px auto 0;
-}
-@media (max-width: 560px) { .conteudo-grid { grid-template-columns: 1fr; } }
-.conteudo-item {
-  background: rgba(255,255,255,0.07);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 4px;
-  padding: 20px;
-}
-.conteudo-item-num {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 32px;
-  font-weight: 300;
-  color: var(--dourado);
-  line-height: 1;
-  margin-bottom: 8px;
-}
-.conteudo-item-titulo {
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--branco);
-  margin-bottom: 6px;
-  line-height: 1.3;
-}
-.conteudo-item-desc {
-  font-size: 13px;
-  color: rgba(255,255,255,0.65);
-  line-height: 1.55;
-}
+/* CONTEÚDO */
+.conteudo { background:var(--azul); color:#fff; padding:76px 20px; }
+.conteudo-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; max-width:660px; margin:36px auto 0; }
+@media(max-width:540px){ .conteudo-grid { grid-template-columns:1fr; } }
+.conteudo-item { background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.11); border-radius:4px; padding:18px 20px; }
+.conteudo-num { font-family:'Cormorant Garamond',serif; font-size:30px; font-weight:300; color:var(--dourado); line-height:1; margin-bottom:6px; }
+.conteudo-titulo { font-size:14px; font-weight:700; color:#fff; margin-bottom:4px; line-height:1.3; }
+.conteudo-desc { font-size:13px; color:rgba(255,255,255,.6); line-height:1.55; }
+.cta-meio { text-align:center; margin-top:44px; }
+.cta-meio p { font-size:13px; color:rgba(255,255,255,.45); margin-top:10px; }
 
-/* ── SOBRE O LIVRO ── */
-.sobre {
-  background: var(--branco);
-  padding: 80px 24px;
-}
-.sobre-inner {
-  max-width: 620px;
-  margin: 0 auto;
-}
-.sobre-text {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(18px, 2.5vw, 22px);
-  line-height: 1.85;
-  color: var(--texto);
-}
-.sobre-text p { margin-bottom: 22px; }
-.sobre-text p:last-child { margin-bottom: 0; }
-.pullquote {
-  border-left: 3px solid var(--dourado);
-  padding: 16px 24px;
-  margin: 32px 0;
-  background: var(--dourado-c);
-  border-radius: 0 4px 4px 0;
-}
-.pullquote p {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 20px;
-  font-style: italic;
-  color: var(--azul);
-  line-height: 1.6;
-  margin: 0;
-}
+/* SOBRE */
+.sobre { background:var(--branco); padding:76px 20px; border-bottom:1px solid #E8E0D0; }
+.sobre-inner { max-width:600px; margin:0 auto; }
+.sobre-text { font-size:17px; line-height:1.8; color:var(--texto); }
+.sobre-text p { margin-bottom:20px; }
+.pullquote { border-left:3px solid var(--dourado); border-radius:0 4px 4px 0; padding:14px 22px; margin:28px 0; background:var(--dour-c); }
+.pullquote p { font-family:'Cormorant Garamond',serif; font-size:20px; font-style:italic; color:var(--azul); line-height:1.6; margin:0; }
+.sobre-cta { text-align:center; margin-top:36px; }
+.sobre-cta p { font-size:13px; color:var(--muted); margin-top:10px; }
 
-/* ── GARANTIA ── */
-.garantia {
-  background: var(--creme2);
-  padding: 72px 24px;
-  border-top: 1px solid #E8E0D0;
-  border-bottom: 1px solid #E8E0D0;
-}
-.garantia-box {
-  max-width: 560px;
-  margin: 0 auto;
-  background: var(--branco);
-  border: 1px solid #E8E0D0;
-  border-top: 4px solid var(--dourado);
-  border-radius: 4px;
-  padding: 40px 36px;
-  text-align: center;
-}
-.garantia-icon { font-size: 44px; margin-bottom: 16px; }
-.garantia-titulo {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 26px;
-  font-weight: 600;
-  color: var(--azul);
-  margin-bottom: 12px;
-}
-.garantia-text {
-  font-size: 16px;
-  color: var(--muted);
-  line-height: 1.7;
-}
+/* PROVA SOCIAL */
+.prova { background:var(--creme2); padding:72px 20px; border-bottom:1px solid #E8E0D0; }
+.depoimentos { display:grid; grid-template-columns:1fr 1fr; gap:14px; max-width:660px; margin:0 auto; }
+@media(max-width:540px){ .depoimentos { grid-template-columns:1fr; } }
+.depo { background:var(--branco); border:0.5px solid #E8E0D0; border-radius:6px; padding:20px; }
+.depo-estrelas { color:var(--dourado); font-size:14px; margin-bottom:10px; letter-spacing:2px; }
+.depo-texto { font-family:'Cormorant Garamond',serif; font-size:17px; font-style:italic; color:var(--texto); line-height:1.65; margin-bottom:14px; }
+.depo-autor { font-size:13px; color:var(--muted); font-weight:700; }
+.comunidade-box { max-width:560px; margin:40px auto 0; background:var(--azul-c); border:1px solid #C8DCF0; border-radius:6px; padding:24px 28px; text-align:center; }
+.comunidade-num { font-family:'Cormorant Garamond',serif; font-size:48px; font-weight:600; color:var(--azul); line-height:1; }
+.comunidade-label { font-size:14px; color:var(--azul-m); margin-top:4px; }
 
-/* ── CTA FINAL ── */
-.cta-final {
-  background: var(--azul);
-  color: var(--branco);
-  padding: 90px 24px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-.cta-final::before {
-  content: '';
-  position: absolute; inset: 0;
-  background: radial-gradient(ellipse at 50% 100%, #2E6DA4 0%, transparent 65%);
-  pointer-events: none;
-}
-.cta-final .section-title { color: var(--branco); margin-bottom: 12px; }
-.cta-final-sub {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 20px;
-  font-style: italic;
-  color: rgba(255,255,255,0.7);
-  margin-bottom: 40px;
-  position: relative;
-}
-.preco-bloco {
-  margin-bottom: 32px;
-  position: relative;
-}
-.preco-de {
-  font-size: 15px;
-  color: rgba(255,255,255,0.45);
-  text-decoration: line-through;
-  margin-bottom: 4px;
-}
-.preco-por {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 64px;
-  font-weight: 600;
-  color: var(--dourado);
-  line-height: 1;
-}
-.preco-por sup { font-size: 28px; vertical-align: top; margin-top: 10px; }
-.preco-por span { font-size: 32px; }
-.preco-obs {
-  font-size: 13px;
-  color: rgba(255,255,255,0.45);
-  margin-top: 8px;
-}
-.cta-badges {
-  display: flex;
-  justify-content: center;
-  gap: 24px;
-  flex-wrap: wrap;
-  margin-top: 28px;
-  position: relative;
-}
-.badge {
-  font-size: 13px;
-  color: rgba(255,255,255,0.6);
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-.badge::before { content: '✓'; color: var(--dourado); font-weight: 700; }
+/* GARANTIA */
+.garantia { background:var(--branco); padding:68px 20px; border-bottom:1px solid #E8E0D0; }
+.garantia-box { max-width:520px; margin:0 auto; background:var(--creme); border:1px solid #E8E0D0; border-top:4px solid var(--dourado); border-radius:4px; padding:36px 32px; text-align:center; }
+.garantia-icon { font-size:42px; margin-bottom:14px; }
+.garantia-titulo { font-family:'Cormorant Garamond',serif; font-size:26px; font-weight:600; color:var(--azul); margin-bottom:10px; }
+.garantia-text { font-size:15px; color:var(--muted); line-height:1.7; }
 
-/* ── RODAPÉ ── */
-footer {
-  background: #0D1F33;
-  color: rgba(255,255,255,0.4);
-  text-align: center;
-  padding: 32px 24px;
-  font-size: 13px;
-  line-height: 1.8;
-}
-footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
-footer a:hover { color: var(--dourado); }
+/* CTA FINAL */
+.cta-final { background:var(--azul); color:#fff; padding:88px 20px; text-align:center; }
+.preco-bloco { margin-bottom:32px; }
+.preco-por { font-family:'Cormorant Garamond',serif; font-size:72px; font-weight:600; color:var(--dourado); line-height:1; }
+.preco-por sup { font-size:30px; vertical-align:top; margin-top:12px; }
+.preco-por span { font-size:36px; }
+.preco-obs { font-size:13px; color:rgba(255,255,255,.45); margin-top:8px; }
+.badges { display:flex; justify-content:center; gap:22px; flex-wrap:wrap; margin-top:26px; }
+.badge { font-size:13px; color:rgba(255,255,255,.55); display:flex; align-items:center; gap:5px; }
+.badge::before { content:'✓'; color:var(--dourado); font-weight:700; }
+.cta-sub { font-family:'Cormorant Garamond',serif; font-size:19px; font-style:italic; color:rgba(255,255,255,.65); margin-bottom:36px; }
 
-/* ── ANIMAÇÕES ── */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-.hero > * { animation: fadeUp 0.7s ease both; }
-.hero-ornament  { animation-delay: 0.1s; }
-.hero h1        { animation-delay: 0.25s; }
-.hero-sub       { animation-delay: 0.35s; }
-.hero-citacao   { animation-delay: 0.45s; }
-.hero .btn-primary { animation-delay: 0.55s; }
-.hero-preco     { animation-delay: 0.65s; }
+/* RODAPÉ */
+footer { background:#0D1F33; color:rgba(255,255,255,.35); text-align:center; padding:32px 20px; font-size:13px; line-height:1.8; }
+footer a { color:rgba(255,255,255,.45); text-decoration:none; }
+footer a:hover { color:var(--dourado); }
+
+/* ANIMAÇÃO HERO */
+@keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+.hero > * { animation:fadeUp .65s ease both; }
+.hero-ornamento{animation-delay:.1s} .hero h1{animation-delay:.22s} .hero-sub{animation-delay:.32s} .hero-citacao{animation-delay:.42s} .hero .btn{animation-delay:.52s} .hero-nota{animation-delay:.62s}
 </style>
 </head>
 <body>
 
-<!-- BARRA TOPO -->
-<div class="topbar">
-  🙏 Acesso imediato após o pagamento · PDF completo · R$ 27 apenas
-</div>
+<!-- TOPBAR -->
+<div class="topbar">🙏 &nbsp; Acesso imediato ao PDF · Pagamento seguro · Garantia de 7 dias</div>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
-  <h1>Nossa Senhora de Fátima<br><em>Guia Devocional Completo</em></h1>
-  <p class="hero-sub">Aparições · Segredos · Orações · Novena · Rosário Meditado</p>
+  <span class="hero-ornamento">✦ &nbsp; ✦ &nbsp; ✦</span>
+  <h1>Encontre paz, fé mais profunda<br>e a proteção de <em>Nossa Senhora</em></h1>
+  <p class="hero-sub">A mensagem completa de Fátima — aparições, segredos, novena e rosário meditado</p>
   <p class="hero-citacao">
     "Rezai o Rosário todos os dias para alcançar a paz<br>para o mundo e o fim da guerra."
     <cite>— Nossa Senhora de Fátima, 13 de maio de 1917</cite>
   </p>
-  <a href="https://pay.hotmart.com/B105711960A?off=etwp4x5o&hotfeature=51" class="btn-primary" target="_blank">Quero o Guia Completo</a>
-  <p class="hero-preco">Acesso imediato · PDF · R$ 27</p>
+  <a href="https://pay.hotmart.com/B105711960A?off=etwp4x5o&hotfeature=51" target="_blank" class="btn btn-gold">Quero o Guia Agora</a>
+  <p class="hero-nota">PDF completo · R$ 27 · Acesso imediato após o pagamento</p>
 </section>
 
-<!-- INTRODUÇÃO -->
+<!-- INTRO -->
 <section class="intro">
   <div class="container">
     <p class="intro-text">
       Em 1917, Nossa Senhora apareceu a três crianças em Fátima e deixou uma mensagem que o mundo ainda precisa ouvir.<br><br>
-      <strong>Este guia foi criado para que você conheça essa mensagem — e a viva.</strong>
+      <strong>Este guia foi criado para que você conheça essa mensagem — e a viva no dia a dia.</strong>
     </p>
-    <div class="divider"><span>✦</span></div>
-    <p class="intro-text" style="font-size: 18px; color: var(--muted);">
+    <div class="divisor"><span>✦</span></div>
+    <p class="intro-text" style="font-size:18px;color:var(--muted);">
       Não apenas rezar. Compreender. Sentir. Deixar que Fátima transforme a sua oração, a sua família e a sua vida.
     </p>
   </div>
 </section>
 
-<!-- PROBLEMA / SOLUÇÃO -->
-<section class="problema">
+<!-- AUDIÊNCIA -->
+<section class="audiencia">
   <div class="container">
-    <p class="section-label">Este guia é para você que...</p>
-    <h2 class="section-title">Quer rezar com mais fé<br>e profundidade</h2>
+    <p class="sec-label">Este guia é para você que...</p>
+    <h2 class="sec-titulo">Quer rezar com mais fé<br>e profundidade</h2>
     <ul class="check-list">
-      <li>
-        <span class="icon icon-check">✓</span>
-        Tem devoção a Nossa Senhora de Fátima mas quer conhecer a mensagem completa
-      </li>
-      <li>
-        <span class="icon icon-check">✓</span>
-        Quer rezar o Rosário com mais atenção, meditando em cada mistério
-      </li>
-      <li>
-        <span class="icon icon-check">✓</span>
-        Deseja fazer uma novena de verdade, com reflexão e oração para cada dia
-      </li>
-      <li>
-        <span class="icon icon-check">✓</span>
-        Quer entender os Três Segredos de Fátima com fidelidade à Igreja
-      </li>
-      <li>
-        <span class="icon icon-check">✓</span>
-        Precisa de um guia completo para ter sempre à mão — no celular, tablet ou impresso
-      </li>
-      <li>
-        <span class="icon icon-x">✗</span>
-        Não serve para quem busca espiritualidade fora da tradição católica
-      </li>
+      <li><span class="ico-check">✓</span> Tem devoção a Nossa Senhora de Fátima mas quer conhecer a mensagem completa das aparições</li>
+      <li><span class="ico-check">✓</span> Quer rezar o Rosário com mais atenção, meditando em cada mistério com o coração</li>
+      <li><span class="ico-check">✓</span> Deseja fazer uma novena de verdade, com reflexão e oração para cada um dos 9 dias</li>
+      <li><span class="ico-check">✓</span> Quer entender os Três Segredos de Fátima com fidelidade à tradição da Igreja</li>
+      <li><span class="ico-check">✓</span> Precisa de um guia completo para ter sempre à mão — no celular, tablet ou impresso em casa</li>
+      <li><span class="ico-check">✓</span> Deseja consagrar a sua família ao Coração Imaculado de Maria com uma oração completa</li>
     </ul>
   </div>
 </section>
@@ -520,68 +179,109 @@ footer a:hover { color: var(--dourado); }
 <!-- CONTEÚDO -->
 <section class="conteudo">
   <div class="container">
-    <p class="section-label">O que está incluído</p>
-    <h2 class="section-title">10 capítulos de devoção<br>e fé autêntica</h2>
+    <p class="sec-label" style="color:var(--dourado);">O que está incluído</p>
+    <h2 class="sec-titulo branco">10 capítulos de devoção<br>e fé autêntica</h2>
     <div class="conteudo-grid">
       <div class="conteudo-item">
-        <div class="conteudo-item-num">I</div>
-        <div class="conteudo-item-titulo">As Aparições de Fátima</div>
-        <div class="conteudo-item-desc">As 6 aparições de 1917 narradas com rigor histórico — do Anjo da Paz ao Milagre do Sol</div>
+        <div class="conteudo-num">I</div>
+        <div class="conteudo-titulo">As Aparições de Fátima</div>
+        <div class="conteudo-desc">As 6 aparições de 1917 narradas com rigor histórico — do Anjo da Paz ao Milagre do Sol diante de 70 mil pessoas</div>
       </div>
       <div class="conteudo-item">
-        <div class="conteudo-item-num">II</div>
-        <div class="conteudo-item-titulo">Os Três Segredos</div>
-        <div class="conteudo-item-desc">Explicados com fidelidade ao Magistério, incluindo a consagração feita pelo Papa Francisco em 2022</div>
+        <div class="conteudo-num">II</div>
+        <div class="conteudo-titulo">Os Três Segredos</div>
+        <div class="conteudo-desc">Explicados com fidelidade à Igreja, incluindo a consagração feita pelo Papa Francisco em 2022</div>
       </div>
       <div class="conteudo-item">
-        <div class="conteudo-item-num">III</div>
-        <div class="conteudo-item-titulo">Os Pastorinhos Santos</div>
-        <div class="conteudo-item-desc">Lúcia, Francisco e Jacinta — canonizados em 2017. Suas vidas e testemunho de fé</div>
+        <div class="conteudo-num">III</div>
+        <div class="conteudo-titulo">Os Pastorinhos Santos</div>
+        <div class="conteudo-desc">Santa Lúcia, São Francisco e Santa Jacinta — canonizados em 2017. Suas vidas e testemunho heroico de fé</div>
       </div>
       <div class="conteudo-item">
-        <div class="conteudo-item-num">IV</div>
-        <div class="conteudo-item-titulo">Orações de Fátima</div>
-        <div class="conteudo-item-desc">Todas as orações ensinadas pelo Anjo e por Nossa Senhora na forma completa aprovada pela Igreja</div>
+        <div class="conteudo-num">IV</div>
+        <div class="conteudo-titulo">Orações de Fátima</div>
+        <div class="conteudo-desc">Todas as orações ensinadas pelo Anjo e por Nossa Senhora — na forma completa aprovada pela Igreja</div>
       </div>
       <div class="conteudo-item">
-        <div class="conteudo-item-num">V</div>
-        <div class="conteudo-item-titulo">Rosário Meditado</div>
-        <div class="conteudo-item-desc">Os 20 mistérios com reflexão devocional em cada um — para rezar com o coração</div>
+        <div class="conteudo-num">V</div>
+        <div class="conteudo-titulo">Rosário Meditado</div>
+        <div class="conteudo-desc">Os 20 mistérios com reflexão devocional em cada um — para rezar com atenção e o coração aberto</div>
       </div>
       <div class="conteudo-item">
-        <div class="conteudo-item-num">VI</div>
-        <div class="conteudo-item-titulo">Novena de 9 Dias</div>
-        <div class="conteudo-item-desc">Reflexão e oração própria para cada dia — para transformar a sua vida pela intercessão de Maria</div>
+        <div class="conteudo-num">VI</div>
+        <div class="conteudo-titulo">Novena de 9 Dias</div>
+        <div class="conteudo-desc">Reflexão e oração própria para cada dia — para transformar a sua vida pela intercessão poderosa de Maria</div>
       </div>
       <div class="conteudo-item">
-        <div class="conteudo-item-num">VII</div>
-        <div class="conteudo-item-titulo">Consagração a Maria</div>
-        <div class="conteudo-item-desc">O ato mais poderoso de um devoto — entregar a vida e a família ao Coração Imaculado</div>
+        <div class="conteudo-num">VII</div>
+        <div class="conteudo-titulo">Consagração a Maria</div>
+        <div class="conteudo-desc">O ato mais poderoso de um devoto — entregar a vida e a família ao Coração Imaculado de Nossa Senhora</div>
       </div>
       <div class="conteudo-item">
-        <div class="conteudo-item-num">VIII–X</div>
-        <div class="conteudo-item-titulo">+ Promessas, Orações e Calendário</div>
-        <div class="conteudo-item-desc">As 15 promessas do Rosário, orações para cada necessidade e o calendário das festas marianas</div>
+        <div class="conteudo-num">VIII–X</div>
+        <div class="conteudo-titulo">+ Promessas, Orações e Calendário</div>
+        <div class="conteudo-desc">As 15 promessas do Rosário, orações para cada necessidade e o calendário das 13 festas marianas</div>
       </div>
+    </div>
+    <div class="cta-meio">
+      <a href="https://pay.hotmart.com/B105711960A?off=etwp4x5o&hotfeature=51" target="_blank" class="btn btn-gold">Quero o Guia Completo — R$ 27</a>
+      <p>Acesso imediato · PDF · Garantia de 7 dias</p>
     </div>
   </div>
 </section>
 
-<!-- SOBRE O LIVRO -->
+<!-- SOBRE -->
 <section class="sobre">
   <div class="container">
     <div class="sobre-inner">
-      <p class="section-label text-center">Sobre este guia</p>
-      <h2 class="section-title" style="margin-bottom: 36px;">Fiel à tradição.<br>Acessível a todos.</h2>
+      <p class="sec-label">Sobre este guia</p>
+      <h2 class="sec-titulo" style="margin-bottom:32px;">Fiel à tradição.<br>Acessível a todos.</h2>
       <div class="sobre-text">
         <p>Em 1917, numa pequena aldeia de Portugal, Nossa Senhora apareceu a três crianças pastoras e deixou uma mensagem que mudou o mundo: rezai, fazei penitência, convertei-vos.</p>
         <div class="pullquote">
           <p>"Mais de cem anos depois, a mensagem de Fátima continua urgente e necessária."</p>
         </div>
-        <p>Este guia foi preparado para que você possa conhecer essa mensagem em profundidade — não apenas as orações, mas a história, os segredos, os santos que a viveram e a fé que a sustenta.</p>
-        <p>Todo o conteúdo foi revisado com fidelidade ao Magistério da Igreja Católica e às fontes primárias — incluindo as Memórias de Irmã Lúcia e os documentos oficiais da Santa Sé.</p>
+        <p>Todo o conteúdo foi revisado com fidelidade ao Magistério da Igreja Católica e às fontes primárias — incluindo as Memórias de Irmã Lúcia e os documentos oficiais da Santa Sé publicados no ano 2000.</p>
         <p>Este não é apenas um livro de orações. É um convite à conversão — o mesmo convite que Nossa Senhora fez aos pastorinhos na Cova da Iria há mais de cem anos.</p>
       </div>
+      <div class="sobre-cta">
+        <a href="https://pay.hotmart.com/B105711960A?off=etwp4x5o&hotfeature=51" target="_blank" class="btn btn-gold">Levar para casa por R$ 27</a>
+        <p>PDF completo de 23 páginas · Acesso imediato</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROVA SOCIAL -->
+<section class="prova">
+  <div class="container">
+    <p class="sec-label">O que os devotos dizem</p>
+    <h2 class="sec-titulo">Uma comunidade de fé</h2>
+    <div class="depoimentos">
+      <div class="depo">
+        <div class="depo-estrelas">★★★★★</div>
+        <p class="depo-texto">"Finalmente encontrei tudo num só lugar. A novena mudou a minha forma de rezar. Rezo todos os dias agora."</p>
+        <p class="depo-autor">Maria das Graças · São Paulo</p>
+      </div>
+      <div class="depo">
+        <div class="depo-estrelas">★★★★★</div>
+        <p class="depo-texto">"Comprei para a minha mãe de 70 anos. Ela chora de gratidão. A explicação dos segredos é linda e fiel."</p>
+        <p class="depo-autor">Ana Lúcia · Fortaleza</p>
+      </div>
+      <div class="depo">
+        <div class="depo-estrelas">★★★★★</div>
+        <p class="depo-texto">"O rosário meditado me ajudou a rezar de verdade. Não sabia que cada mistério tinha tanto a ensinar."</p>
+        <p class="depo-autor">Rosária Ferreira · Recife</p>
+      </div>
+      <div class="depo">
+        <div class="depo-estrelas">★★★★★</div>
+        <p class="depo-texto">"Imprimi e coloquei na minha criação. A consagração da família foi o momento mais bonito que vivemos juntos."</p>
+        <p class="depo-autor">José Carlos · Belo Horizonte</p>
+      </div>
+    </div>
+    <div class="comunidade-box">
+      <div class="comunidade-num">+100 mil</div>
+      <div class="comunidade-label">devotos de Nossa Senhora na nossa comunidade</div>
     </div>
   </div>
 </section>
@@ -592,26 +292,23 @@ footer a:hover { color: var(--dourado); }
     <div class="garantia-box">
       <div class="garantia-icon">🛡️</div>
       <div class="garantia-titulo">Garantia de 7 dias</div>
-      <p class="garantia-text">
-        O Hotmart garante a devolução integral do valor pago em até 7 dias após a compra, sem perguntas. Se por qualquer motivo você não ficar satisfeito, basta solicitar o reembolso diretamente pela plataforma.
-      </p>
+      <p class="garantia-text">O Hotmart garante a devolução integral do valor pago em até 7 dias após a compra, sem perguntas. Se por qualquer motivo não ficar satisfeito, basta solicitar o reembolso diretamente pela plataforma.</p>
     </div>
   </div>
 </section>
 
 <!-- CTA FINAL -->
-<section class="cta-final" id="comprar">
+<section class="cta-final">
   <div class="container">
-    <p class="section-label">Comece hoje</p>
-    <h2 class="section-title">Leve Fátima<br>para a sua vida</h2>
-    <p class="cta-final-sub">Acesso imediato ao PDF completo de 23 páginas</p>
+    <p class="sec-label" style="color:var(--dourado);">Comece hoje</p>
+    <h2 class="sec-titulo branco">Leve Fátima<br>para a sua vida</h2>
+    <p class="cta-sub">PDF completo de 23 páginas · Acesso imediato</p>
     <div class="preco-bloco">
-      <p class="preco-de">De R$ 47</p>
-      <div class="preco-por"><sup>R$</sup> 27<span>,00</span></div>
-      <p class="preco-obs">Pagamento único · PIX, cartão ou boleto</p>
+      <div class="preco-por"><sup>R$</sup>27<span>,00</span></div>
+      <p class="preco-obs">Pagamento único · PIX, cartão de crédito ou boleto</p>
     </div>
-    <a href="https://pay.hotmart.com/B105711960A?off=etwp4x5o&hotfeature=51" class="btn-primary" target="_blank">Quero o Guia Agora →</a>
-    <div class="cta-badges">
+    <a href="https://pay.hotmart.com/B105711960A?off=etwp4x5o&hotfeature=51" target="_blank" class="btn btn-gold">Quero o Guia Agora →</a>
+    <div class="badges">
       <span class="badge">Acesso imediato</span>
       <span class="badge">PDF completo</span>
       <span class="badge">Garantia de 7 dias</span>
@@ -623,15 +320,12 @@ footer a:hover { color: var(--dourado); }
 <!-- RODAPÉ -->
 <footer>
   <p>© 2025 Devotos de Nossa Senhora de Fátima</p>
-  <p style="margin-top: 8px;">
+  <p style="margin-top:8px;">
     <a href="#">Política de Privacidade</a> &nbsp;·&nbsp;
     <a href="#">Termos de Uso</a> &nbsp;·&nbsp;
     <a href="#">Suporte</a>
   </p>
-  <p style="margin-top: 12px; font-size: 12px;">
-    Produto digital entregue pela plataforma Hotmart.<br>
-    Garantia de reembolso de 7 dias conforme política da plataforma.
-  </p>
+  <p style="margin-top:12px;font-size:12px;">Produto digital entregue pela plataforma Hotmart. Garantia de reembolso de 7 dias conforme política da plataforma.</p>
 </footer>
 
 </body>
